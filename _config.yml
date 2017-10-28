@@ -4,10 +4,10 @@ permalink:      /:year-:month-:day/:title
 # Setup
 title:          HAKASELABS
 paginate:       5
-baseurl:        ""
+baseurl:        "https://hakaselabs.github.io"
 url:            "https://hakaselabs.github.io"
 long_title:     "HAKASELABS | Articles on Software Development, life, and everything in-between"
-
+description:    "Articles on Software Development and Engineering, DevOps, and everything in-between"
 # Assets
 sass:
   sass_dir:     _sass
@@ -25,6 +25,9 @@ author:
 # Gems
 gems:
   - jekyll-paginate
+
+feed:
+  path: atom.xml
 
 # Plugins
 plugins:
