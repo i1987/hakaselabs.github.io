@@ -6,12 +6,17 @@
   <meta name="viewport" content="width=device-width, initial-scale=1  maximum-scale=1, user-scalable=no">
   <meta name="referrer" content="no-referrer-when-downgrade" />
   <meta property="og:site_name" content="hakaselabs" />
-  <meta property="og:type" content="website" />
+  <meta property="og:type" content="blog" />
   <meta property="og:title" content="hakaselabs" />
   <meta property="og:description" content="Articles on software development, software engineering, and everything in-between." />
   <meta property="og:url" content="https://hakaselabs.github.io/" />
   <meta property="og:image:width" content="260" />
   <meta property="og:image:height" content="200" />
+  {% if page.image %}
+    <meta name="og:image" content="{{ page.image }}">
+  {% else %}
+    <meta name="og:image" content="{{ site.url }}/assets/t-card.png">
+  {% endif %}
   <meta name="keywords" content="software, tech, php, javascript, frontend, backend, oop, software development, web development,go,nodejs,react,js, software engineering" />
   <meta name="theme-color" content="#1a1e1e">
 
