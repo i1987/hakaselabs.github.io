@@ -14,7 +14,7 @@ Most of these extra tools are being accessed/used from a command line interface.
 A terminal is an interface where you can type and execute text based commands. Every operating system comes with a factory command line interface (CLI). On Linux the default terminal is named "Terminal", same for MacOS. On Windows, you'd find the **command prompt** which is totally different from Linux and macOS since those are built on Unix, so to get the features (which we'll discuss later), you can Install a [linux enviroment](https://msdn.microsoft.com/en-us/commandline/wsl/install_guide).
 
 
-![terminal window](http://res.cloudinary.com/hakase-labs/image/upload/v1509199976/terminal-1.png "An opened Terminal window on Linux")
+![terminal window](http://res.cloudinary.com/hakase-labs/image/upload/c_scale,w_1230/v1509199976/terminal-1.png "An opened Terminal window on Linux")
 
 
 ### Basic commands
@@ -93,7 +93,7 @@ Some example dotfiles
 - .prompt
 
 
-![Dotfiles](http://res.cloudinary.com/hakase-labs/image/upload/v1509222152/dotfiles_gyp7ku.png "Dotfiles linux")
+![Dotfiles](http://res.cloudinary.com/hakase-labs/image/upload/c_scale,w_1230/v1509222152/dotfiles_gyp7ku.png "Dotfiles linux")
 
 
 
@@ -116,7 +116,7 @@ brew install git
 choco install git
 ```
 
-![Git](http://res.cloudinary.com/hakase-labs/image/upload/v1509221564/git-shell_f7q4nc.png "git prompt")
+![Git](http://res.cloudinary.com/hakase-labs/image/upload/c_scale,w_1230/v1509221564/git-shell_f7q4nc.png "git prompt")
 
 
 ### Aliases
