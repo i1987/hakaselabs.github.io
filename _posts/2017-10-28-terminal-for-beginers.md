@@ -16,6 +16,7 @@ A terminal is an interface where you can type and execute text based commands. E
 
 ![terminal window](http://res.cloudinary.com/hakase-labs/image/upload/v1509199976/terminal-1.png "An opened Terminal window on Linux")
 
+
 ### Basic commands
 **Changing directories:** You can change into any directory from a terminal with the `cd` command. What it requires is a valid path to a directory. So using the command:
 ```shell
@@ -95,6 +96,7 @@ Some example dotfiles
 ![Dotfiles](http://res.cloudinary.com/hakase-labs/image/upload/v1509222152/dotfiles_gyp7ku.png "Dotfiles linux")
 
 
+
 ### Git
 You've probably heard of Git before, well no assumptions here. Git is a program used for version control. It allows you keep track of changes made to a project (repository), and allow multiple collaboration on a single project.
 > Git is a life saver!!!
@@ -115,6 +117,7 @@ choco install git
 ```
 
 ![Git](http://res.cloudinary.com/hakase-labs/image/upload/v1509221564/git-shell_f7q4nc.png "git prompt")
+
 
 ### Aliases
 While using the terminal more often, you'd probably note some commands you repeat. You can use an alias to abbreviate more complex commands. While I work, I normally have to commit, push, or clone stuff using git, I have some commands abbreviated:
