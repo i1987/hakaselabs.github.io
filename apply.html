@@ -1,0 +1,99 @@
+---
+layout: default
+title: "Apply to work with codehakase"
+permalink: apply.html
+---
+<form id="gig-apply-form" class="gig-apply-form">
+  <div class="container">
+    <h2>HOW CAN I HELP?</h2>
+    <ul>
+      <li>
+        <input type="radio" name="service">
+        <label>Help me design and develop a project</label>
+        <div class="check"><div class="inside"></div></div>
+      </li>
+      <li>
+        <input type="radio" name="service">
+        <label>Teach me 1:1</label>
+        <div class="check"><div class="inside"></div></div>
+      </li>
+      <li>
+        <input type="radio" name="service">
+        <label>Conduct a workshop/bootcamp for my team</label>
+        <div class="check"><div class="inside"></div></div>
+      </li>
+      <li>
+        <input type="radio" name="service">
+        <label>Speak at my conference/event</label>
+        <div class="check"><div class="inside"></div></div>
+      </li>
+      <li>
+        <input type="radio" name="service">
+        <label>Something else</label>
+        <div class="check"><div class="inside"></div></div>
+      </li>
+    </ul>
+  </div>
+  <label>What would you like to tell me?</label>
+  <textarea name="message" id="message" placeholder="Feel free to type as much or as little as you like." class="gig-apply-textarea"></textarea>
+  <input type="text" name="name" id="name" placeholder="Your Name" class="gig-apply-field" />
+  <input type="email" name="email" id="email" placeholder="Your email" class="gig-apply-field" />
+  <input type="submit" id="send" value="Send" class="gig-apply-btn" />
+</form>
+
+<script>
+  var data_js = {
+      "access_token": "afd02im44fut6sv8zhtk2xmb"
+  };
+
+  var sendButton = document.getElementById("send");
+
+  function sendMail() {
+      sendButton.value='Sending…';
+      sendButton.disabled=true;
+      var request = new XMLHttpRequest();
+      request.onreadystatechange = function() {
+          if (request.readyState == 4 && request.status == 200) {
+            console.log(request.response);
+              //window.location="https://hakaselabs.github.io";
+          } else
+          if(request.readyState == 4) {
+              console.log(request.response);
+          }
+      };
+
+      var subject = document.querySelector("input[name=service]:checked").value;
+      var message = document.getElementById('message').value;
+      var email = document.getElementById('email').value;
+      var name = document.getElementById('name').value;
+
+      data_js['subject'] = subject;
+      data_js['text'] = message;
+      data_js['email'] = email;
+      data_js['name'] = name;
+      var params = toParams(data_js);
+
+      request.open("POST", "https://postmail.invotes.com/send", true);
+      request.setRequestHeader("Content-type", "application/x-www-form-urlencoded");
+
+      request.send(params);
+
+      return false;
+  }
+
+  sendButton.onclick = sendMail;
+
+  function toParams(data_js) {
+      var form_data = [];
+      for ( var key in data_js ) {
+          form_data.push(encodeURIComponent(key) + "=" + encodeURIComponent(data_js[key]));
+      }
+
+      return form_data.join("&");
+  }
+
+  var js_form = document.getElementById('gig-apply-form');
+  js_form.addEventListener("submit", function (e) {
+      e.preventDefault();
+  });
+</script>
