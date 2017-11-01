@@ -27,6 +27,10 @@ A terminal is an interface where you can type and execute text based commands. E
      (adsbygoogle = window.adsbygoogle || []).push({});
 </script>
 
+
+
+
+
 ### Basic commands
 **Changing directories:** You can change into any directory from a terminal with the `cd` command. What it requires is a valid path to a directory. So using the command:
 ```shell
