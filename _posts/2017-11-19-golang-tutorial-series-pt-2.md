@@ -1,5 +1,6 @@
 ---
-title: "Getting Started with Go - Variables"
+layout: post
+title: "Getting Started with Go - Variables &#x2197;"
 author: "@codehakase"
 ---
 
