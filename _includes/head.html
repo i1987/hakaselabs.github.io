@@ -1,0 +1,127 @@
+<meta charset="utf-8">
+<title>{% if page.title %}{{ page.title | lowcase }} &vert; {% endif %}{{ site.title | lowcase }}</title>
+<meta name="description" content="{% if page.description %}{{ page.description }}{% else %}{{ site.description }}{% endif %}">
+{% if page.tags %}
+  <meta name="keywords" content="{{ page.tags | join: ', ' }}">
+{% else %}
+  <meta name="keywords" content="software, tech, php, javascript, frontend, backend, oop, software development, web development,go,nodejs,react,js, software engineering">
+{% endif %}
+
+{% if site.owner.twitter %}
+<!-- Twitter Cards -->
+{% if page.imagefeature %}
+<meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:image" content="{{ site.url }}/images/{{ page.imagefeature }}"> {% else %}
+<meta name="twitter:card" content="summary">
+<meta name="twitter:vimage" content="{% if page.image.thumb %}{{ site.url }}/images/{{ page.image.thumb }}{% else %}{{ site.url }}/images/{{ site.logo }}{% endif %}">{% endif %}
+<meta name="twitter:title" content="{% if page.title %}{{ page.title }}{% else %}{{ site.title }}{% endif %}">
+<meta name="twitter:description" content="{% if page.description %}{{ page.description }}{% else %}{{ site.description }}{% endif %}">
+<meta name="twitter:creator" content="@{{ site.owner.twitter }}">{% endif %}
+<!-- Open Graph -->
+<meta property="og:locale" content="en_UK">
+<meta property="og:type" content="website">
+<meta property="og:title" content="{% if page.title %}{{ page.title }}{% else %}{{ site.title }}{% endif %}">
+<meta property="og:description" content="{% if page.description %}{{ page.description }}{% else %}{{ site.description }}{% endif %}">
+<meta property="og:url" content="{{ site.url }}{{ page.url }}">
+<meta property="og:site_name" content="{{ site.title }}"> {% if page.imagefeature %}
+<meta property="og:image" content="{{ site.url }}/images/{{ page.imagefeature }}">{% else %}
+<meta property="og:image" content="{{ site.url }}/images/{{ site.default_bg }}">{% endif %} {% if site.google_verify %}
+<meta name="google-site-verification" content="{{ site.google_verify }}">{% endif %} {% if site.bing_verify %}
+<meta name="msvalidate.01" content="{{ site.bing_verify }}">{% endif %} {% capture canonical %}{{ site.url }}{% if site.permalink contains '.html' %}{{ page.url }}{% else %}{{ page.url | remove:'index.html' | strip_slash }}{% endif %}{% endcapture %}
+<link rel="canonical" href="{{ canonical }}">
+<link href="{{ site.url }}/feed.xml" type="application/atom+xml" rel="alternate" title="{{ site.title }} Feed"> {% if site.owner.google_plus %}
+<link rel="author" href="{{ site.owner.google_plus }}?rel=author">{% endif %}
+<!-- http://t.co/dKP3o1e -->
+<meta name="HandheldFriendly" content="True">
+<meta name="MobileOptimized" content="320">
+<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no" />
+<link href='http://fonts.googleapis.com/css?family=Montserrat:400,700|Open+Sans:400,600,300,800,700' rel='stylesheet' type='text/css'>
+<link href="https://fonts.googleapis.com/css?family=Comfortaa" rel="stylesheet">
+<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css">
+<link rel="stylesheet" href="{{ site.url }}/assets/css/vendor/normalize.css">
+<link rel="stylesheet" href="{{ site.url }}/assets/css/vendor/nprogress.css">
+<link rel="stylesheet" href="{{ site.url }}/assets/css/vendor/foundation.min.css">
+<link rel="stylesheet" href="{{ site.url }}/assets/css/style.css">
+<link rel="stylesheet" href="{{ site.url }}/assets/css/post.css"> {% if page.mathjax %}
+<!--Load Mathjax-->
+<script type="text/javascript" src="http://cdn.mathjax.org/mathjax/latest/MathJax.js?config=TeX-AMS-MML_HTMLorMML"></script>
+<script>
+MathJax.Hub.Config({
+  config: ["MMLorHTML.js"],
+  extensions: ["tex2jax.js", "TeX/AMSmath.js", "TeX/AMSsymbols.js"],
+  jax: ["input/TeX"],
+  tex2jax: {
+    inlineMath: [
+      ['$', '$'],
+      ["\\(", "\\)"]
+    ],
+    displayMath: [
+      ['$$', '$$'],
+      ["\\[", "\\]"]
+    ],
+    processEscapes: false
+  },
+  TeX: {
+    TagSide: "right",
+    TagIndent: ".8em",
+    MultLineWidth: "85%",
+    equationNumbers: {
+      autoNumber: "AMS",
+    },
+    unicode: {
+      fonts: "STIXGeneral,'Arial Unicode MS'"
+    }
+  },
+  showProcessingMessages: false
+});
+</script>{% endif %}
+<!-- Icons -->
+<!-- 16x16 -->
+<link rel="shortcut icon" href="{{ site.url }}/images/favicon.png">
+<!-- 57x57 (precomposed) for iPhone 3GS, pre-2011 iPod Touch and older Android devices -->
+<link rel="apple-touch-icon-precomposed" href="{{ site.url }}/images/apple-touch-icon-precomposed.png">
+<!-- 72x72 (precomposed) for 1st generation iPad, iPad 2 and iPad mini -->
+<link rel="apple-touch-icon-precomposed" sizes="72x72" href="{{ site.url }}/images/apple-touch-icon.png">
+<!-- 114x114 (precomposed) for iPhone 4, 4S, 5 and post-2011 iPod Touch -->
+<link rel="apple-touch-icon-precomposed" sizes="114x114" href="{{ site.url }}/images/apple-touch-icon.png">
+<!-- 144x144 (precomposed) for iPad 3rd and 4th generation -->
+<link rel="apple-touch-icon-precomposed" sizes="144x144" href="{{ site.url }}/images/apple-touch-icon.png">
+<style>
+.sd-lf {
+  padding-top: 7.5rem;
+}
+.blog-info, .adbygoogle {
+  padding: 10px;
+  border: 3px solid #e6e6e6;
+  font-family: 'Comfortaa', cursive;
+}
+.h-info {
+  text-align: center;
+  padding: 10px;
+  border-bottom: 2.5px solid #e6e6e6;
+}
+.h-info h3 {
+  font-family: 'Comfortaa', cursive;
+  font-weight: 700;
+  cursor: pointer;
+  display: inline-block;
+  vertical-align: middle;
+  -webkit-transform: perspective(1px) translateZ(0);
+  transform: perspective(1px) translateZ(0);
+  box-shadow: 0 0 1px transparent;
+  -webkit-transition-duration: 0.3s;
+  transition-duration: 0.3s;
+  -webkit-transition-property: transform;
+  transition-property: transform;
+}
+.h-info h3:hover {
+  color: #F2C94C;
+  -webkit-transform: translateX(8px);
+  transform: translateX(8px);
+}
+@media screen and (max-width: 1025px) {
+  .adbygoogle {
+    display: none !important;
+  }
+}
+</style>

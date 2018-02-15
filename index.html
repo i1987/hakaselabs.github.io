@@ -1,0 +1,113 @@
+---
+layout: home
+title:
+description: "hakaselogs Articles on Software development. Written with love by Francis Sunday, Software craftsman & JAMstack believer."
+headline: An Engineer's Diary
+tags: [software, tech, php, javascript, frontend, backend, oop, software development, web development,go,nodejs,react,js, software engineering]
+---
+{% if site.paginate %}
+  {% for post in paginator.posts %}
+    {% assign curr = forloop.index0 | modulo:4 %}
+    <article class="notepad-index-post post row">
+        <div class="small-12 medium-3 large-2 columns datetime">
+            <span class="notepad-post-meta">
+                <time datetime="{{ post.date | date_to_xmlschema }}">
+                    <span class="day">
+                        {{ post.date | date: "%d" }}
+                    </span>
+                    <span class="month-year">
+                        {{ post.date | date: "%B %Y" }}
+                    </span>
+                </time>
+            </span>
+        </div>
+        <div class="small-12 medium-9 large-10 columns">
+            <header class="notepad-post-header">
+                <h3 class="notepad-post-title">
+                    <a href="{{ site.url }}{{ post.url }}">
+                        {{ post.title }}
+                    </a>
+                </h3>
+            </header>
+            <section class="notepad-post-excerpt">
+                <p>{{ post.content | strip_html | truncatewords:40 }}</p>
+            </section>
+                <br>
+                <div class="notepad-index-post-tags">
+                {% for tag in post.categories %}<b>{{ tag | capitalize }}</b>{% unless forloop.last %},&nbsp;{% endunless %}{% endfor %}
+
+                </div>
+
+        </div>
+        {% if curr == 0 %}
+        <br>
+          <div class="small-12 medium-9 large-10 columns">
+              <script async src="//pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script>
+              <ins class="adsbygoogle"
+                   style="display:block"
+                   data-ad-format="fluid"
+                   data-ad-layout-key="-gv-d+2n-31-27"
+                   data-ad-client="ca-pub-6516758593918018"
+                   data-ad-slot="2270080901"></ins>
+              <script>
+                   (adsbygoogle = window.adsbygoogle || []).push({});
+              </script>
+          </div>
+        {% endif %}
+    </article>
+  {% endfor %}
+    <nav class="pagination" role="navigation">
+    {% if paginator.previous_page %}
+      {% if paginator.previous_page == 1 %}
+      <a class="newer-posts" href="{{ site.url }}"><i class="fa fa-chevron-left"></i> Newer</a>
+      {% else %}
+      <a class="newer-posts" href="{{ site.url }}/page{{ paginator.previous_page }}"><i class="fa fa-chevron-left"></i> Newer</a>
+      {% endif %}
+  {% else %}
+    <span class="newer-posts faded"><i class="fa fa-chevron-left"></i> Newer</span>
+    {% endif %}
+
+
+    <span class="page-number">Page {{ paginator.page }} of {{ paginator.total_pages }}</span>
+      {% if paginator.next_page %}
+        <a class="older-posts" href="{{ site.url }}/page{{ paginator.next_page }}/">Older <i class="fa fa-chevron-right"></i></a>
+      {% else %}
+      <span class="older-posts faded">Older <i class="fa fa-chevron-right"></i></span>
+      {% endif %}
+  </nav>
+{% else %}
+  {% for post in site.posts %}
+    <article class="notepad-index-post post row">
+        <div class="small-12 medium-3 large-2 columns datetime">
+            <span class="notepad-post-meta">
+                <time datetime="{{ post.date | date_to_xmlschema }}">
+                    <span class="day">
+                        {{ post.date | date: "%d" }}
+                    </span>
+                    <span class="month-year">
+                        {{ post.date | date: "%B %Y" }}
+                    </span>
+                </time>
+            </span>
+        </div>
+        <div class="small-12 medium-9 large-10 columns">
+            <header class="notepad-post-header">
+                <h3 class="notepad-post-title">
+                    <a href="{{ site.url }}{{ post.url }}">
+                        {{ post.title }}
+                    </a>
+                </h3>
+            </header>
+            <section class="notepad-post-excerpt">
+                <p>{{ post.content | strip_html | truncatewords:100 }}</p>
+            </section>
+
+                <div class="notepad-index-post-tags">
+                {% for tag in post.categories %}<a href="{{ site.url }}/categories/index.html#{{ post.categories | cgi_encode }}" title="Other posts from the {{ tag | capitalize }} category">{{ tag | capitalize }}</a>{% unless forloop.last %}&nbsp;{% endunless %}{% endfor %}
+
+                </div>
+
+        </div>
+    </article>
+  {% endfor %}
+{% endif %}

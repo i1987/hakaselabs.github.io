@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+  {% include head.html %}
+</head>
+
+<body class="post-template page" itemscope itemtype="http://schema.org/WebPage">
+  <main id="notepad-page-container" class="notepad-page-container" role="main">
+    <header class="notepad-site-head">
+      <div class="notepad-site-head-menu">
+        <div class="h-info">
+          <h3>hakaselogs</h3>
+        </div>
+        <div class="clearfix"></div>
+      </div>
+    </header>
+    <div class="row">
+      <div class="large-4 columns sd-lf">
+        <div class="blog-info">
+          <p><b>hakaselogs:</b> Articles on Software development. Written with love by <a href="https://codehakase.ninja">Francis Sunday</a>, Software craftsman & JAMstack believer.</p>
+          <a href="https://twitter.com/codehakase" class="twitter-follow-button" data-show-count="true">Follow @codehakase</a>
+          <script async src="//platform.twitter.com/widgets.js" charset="utf-8"></script>
+          <a href="https://www.codementor.io/codehakase?utm_source=github&utm_medium=button&utm_term=codehakase&utm_campaign=github"><img src="https://cdn.codementor.io/badges/book_session_github.svg" alt="Book session on Codementor" style="max-width:100%" /></a>
+        </div>
+        <br>
+        <div class="adbygoogle" style="height: 350px; overflow: hidden;">
+          <script async src="//pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script>
+          <!-- blog.v2 -->
+          <ins class="adsbygoogle" style="display:block" data-ad-client="ca-pub-6516758593918018" data-ad-slot="8375011171" data-ad-format="auto"></ins>
+          <script>
+          (adsbygoogle = window.adsbygoogle || []).push({});
+          </script>
+        </div>
+      </div>
+      <div class="large-8 columns">
+        <article class="notepad-page-content">
+          <div>{{ content }}</div>
+        </article>
+      </div>
+    </div>
+    <div class="cf"></div>
+    {% include footer.html %}
+  </main>
+  {% include scripts.html %}
+</body>
+
+</html>
