@@ -7,7 +7,6 @@ tags: [software, tech, php, javascript, frontend, backend, oop, software develop
 ---
 {% if site.paginate %}
   {% for post in paginator.posts %}
-    {% assign curr = forloop.index0 | modulo:4 %}
     <article class="notepad-index-post post row">
         <div class="small-12 medium-3 large-2 columns datetime">
             <span class="notepad-post-meta">
@@ -40,20 +39,6 @@ tags: [software, tech, php, javascript, frontend, backend, oop, software develop
                 </div>
 
         </div>
-        {% if curr == 0 %}
-          <div class="small-12 medium-9 large-10 columns">
-              <script async src="//pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script>
-              <ins class="adsbygoogle"
-                   style="display:block"
-                   data-ad-format="fluid"
-                   data-ad-layout-key="-gv-d+2n-31-27"
-                   data-ad-client="ca-pub-6516758593918018"
-                   data-ad-slot="2270080901"></ins>
-              <script>
-                   (adsbygoogle = window.adsbygoogle || []).push({});
-              </script>
-          </div>
-        {% endif %}
     </article>
   {% endfor %}
     <nav class="pagination" role="navigation">
