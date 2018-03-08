@@ -7,6 +7,7 @@ description: "The latest Go release, v1.10 arrived six months after V1.9. This r
 modified: 2018-03-06
 tags: [changelog, golang, go]
 share: true
+comments: true
 category: [go,golang]
 ---
 > Go 1.8 is one year old (Happy belated Birthday 🎊 🎉)
