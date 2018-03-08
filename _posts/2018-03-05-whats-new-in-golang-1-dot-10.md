@@ -1,4 +1,3 @@
-
 ---
 layout: post
 title: "Here's What's New  In Go 1.10"
