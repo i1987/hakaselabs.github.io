@@ -1,6 +1,6 @@
 ---
 layout: post
-title: "A Little Overview Of The CouchDB Replicator Database"
+title: "The CouchDB Replicator Database - An Overview"
 author: "@codehakase"
 image: "https://i.pinimg.com/originals/cc/7a/44/cc7a4487b4a69a8169ed62da74a6180b.jpg"
 description: "An overview of how the replicator database works in CouchDB, and how to setup replication like a Boss."
