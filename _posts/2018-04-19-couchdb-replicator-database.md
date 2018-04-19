@@ -115,6 +115,9 @@ During replication, CouchDB compares the source and destination databases, to de
 
 A replication task will finish once it reaches the end of the changes feed. If its continuous property is set to true, it will wait for new changes to appear until the task is canceled. Replication tasks also create checkpoint documents on the destination to ensure that a restarted task can continue from where it stopped, for example after it has crashed.
 
+### References
+[Introduction to CouchDB Replication - Guide](http://docs.couchdb.org/en/2.1.1/replication/intro.html?highlight=Replication)
+
 ## Conclusion
 Hurray! We've just wrapped up an overview of the CouchDB replicator database, and a little of the replication terminology.
 
