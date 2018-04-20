@@ -2,7 +2,7 @@
 layout: post
 title: "React Native vs Ionic - A Quick Comparison"
 author: "@codehakase"
-image: "https://cdn.scotch.io/23499/HDDv8v7TRhqt4ao1nwfH_React_Native_vs_Ionic_m5b5ol.png.jpg"
+imagefeature: "https://cdn.scotch.io/23499/HDDv8v7TRhqt4ao1nwfH_React_Native_vs_Ionic_m5b5ol.png.jpg"
 description: "Demistifying the differences between Ionic and React Native"
 modified: 2017-12-05
 tags: [ionic, react-native]

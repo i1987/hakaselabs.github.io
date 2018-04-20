@@ -2,8 +2,8 @@
 layout: post
 title: "Here's What's New  In Go 1.10"
 author: "@codehakase"
-image: "http://www.confusedcoders.com/wp-content/uploads/2016/10/golang-1.jpg"
-description: "The latest Go release, v1.10 arrived six months after V1.9. This release was stated in the change-logs and the Go blog. I'm gonna share some interesting changes I've found in Go 1.10 with you." 
+imagefeature: "http://www.confusedcoders.com/wp-content/uploads/2016/10/golang-1.jpg"
+description: "The latest Go release, v1.10 arrived six months after V1.9. This release was stated in the change-logs and the Go blog. I'm gonna share some interesting changes I've found in Go 1.10 with you."
 modified: 2018-03-06
 tags: [changelog, golang, go]
 share: true
@@ -11,7 +11,7 @@ comments: true
 category: [go,golang]
 ---
 > Go 1.8 is one year old (Happy belated Birthday 🎊 🎉)
-> Go 1.9 is already 6 months old! 
+> Go 1.9 is already 6 months old!
 > Go 1.10 is out ✌
 
 The latest Go release, **v1.10** arrived six months after V1.9. This release was stated in the change-logs and the Go blog. I'm gonna share some interesting changes I've found in Go 1.10 with you.
@@ -42,13 +42,13 @@ Go 1.10 is the last release that will run on Windows XP or Windows Vista. Go 1.1
 #### Default GOROOT & GOTMPDIR
 In Go 1.10, if the environment variable `$GOROOT` is not set, the go tool uses the default `GOROOT` during compilation, by deducing `GOROOT` from its own executable path. This change was made, to allow binary distributions to be unpacked anywhere in the file system and then be used without setting `GOROOT` explicitly.  A new variable `$GOTMPDIR` was added to control where temporary files are created.
 
-#### Go Build & Go Install 
+#### Go Build & Go Install
 In previous versions, running `go build `, detects changes of packages based on the time it was modified. The `go build` command now detects out-of-date packages purely based on th content of source files, specified build flags, and metadata stored in the compiled packages.
 The `go build -asmflags, -gcflags, -gccgoflags,` and `ldflags` options are applied by default only to packages listed directly on the command line. For example, `go build -gcflags=-m mypackage` passes the compiler the `-m` flag when building `mypackage` but not its dependencies. `go build -asmflags=pattern=flags ...` applies the flags only to the packages matching the pattern. For example `go install -ldflags=cmd/gofmt=-X=main.version=1.2.3 cmd/ ...` installs all the commands matching `cmd/...` but only applies the `-X` option to the linker flags for `cmd/gofmt`.
 
 #### Testing
-The `go test ..` command now caches test result if the test executable and command line matches a previous run, and the files and environment variables consulted by the run have not changed. `go test` will print the previous test output,  replacing the elapsed time with the string **"cached"**.  The `go test` command now runs `go vet` on the testing package to identify significant problems before running the test(s). `go vet` can be disabled by passing the `-vet=off` flag to the `go test` command - `go test -vet=off` 
-The `go test -coverpkg` flag now interprets its argument as a comma-separated list of patterns to match against the dependencies of each test. For example, `go test -coverpkg=all` is now a more meaningful way to run a test with coverage enabled for the test package and all its dependencies. 
+The `go test ..` command now caches test result if the test executable and command line matches a previous run, and the files and environment variables consulted by the run have not changed. `go test` will print the previous test output,  replacing the elapsed time with the string **"cached"**.  The `go test` command now runs `go vet` on the testing package to identify significant problems before running the test(s). `go vet` can be disabled by passing the `-vet=off` flag to the `go test` command - `go test -vet=off`
+The `go test -coverpkg` flag now interprets its argument as a comma-separated list of patterns to match against the dependencies of each test. For example, `go test -coverpkg=all` is now a more meaningful way to run a test with coverage enabled for the test package and all its dependencies.
 Passing the `-failfast` flag to `go test` disables running additional tests after any test fails.
 There's a new flag `-json` when used with `go test`, converts the test output to JSON format - `go test -json`
 
@@ -72,17 +72,17 @@ In Go 1.9 `go doc mail.Address` outputs:
 ```shell
 package mail // import "net/mail"
 
-type Address struct {  
- Name    string  
- Address string 
-}  
-    Address represents a single mail address. An address such as "Barry Gibbs  
-    <[bg@example.com](mailto:bg@example.com)>" is represented as Address{Name: "Barry Gibbs", Address:  
+type Address struct {
+ Name    string
+ Address string
+}
+    Address represents a single mail address. An address such as "Barry Gibbs
+    <[bg@example.com](mailto:bg@example.com)>" is represented as Address{Name: "Barry Gibbs", Address:
     "[bg@example.com](mailto:bg@example.com)"}.
 
-func ParseAddress(address string) (*Address, error)  
+func ParseAddress(address string) (*Address, error)
 func (a *Address) String() string
-``` 
+```
 Difference between both is the display of `ParseAddressList` which was only shown  the package overview - `go doc mail`.
 
 #### Go Vet
@@ -91,14 +91,14 @@ The `go vet` command now always have access to complete, up-to-date type informa
 #### Diagnostics
 Go 1.10 includes a new [overview of available Go program diagnostic tools](https://golang.org/doc/diagnostics.html)
 
-#### Gofmt 
-Go 1.10 changed two minor details of the default formatting of Go source code. For instance, a certain complex three-index slice expression formatted like `x[i+1 : j:k` is now formatted with more consistent spacing: `x[i+1 : j : k`. Inline interface with single methods is now supported: 
+#### Gofmt
+Go 1.10 changed two minor details of the default formatting of Go source code. For instance, a certain complex three-index slice expression formatted like `x[i+1 : j:k` is now formatted with more consistent spacing: `x[i+1 : j : k`. Inline interface with single methods is now supported:
 ```go
-type CarService interface { Check() } 
+type CarService interface { Check() }
 ```
 
 Running `go fmt` in Go 1.9 formats the above to:
-```go 
+```go
 type CarService interface {
   Check()
  }
@@ -110,11 +110,11 @@ The `go fix`  tool now replaces imports of `golang.org/x/net/context` with `"con
 ### Runtime
 The behavior of nested calls to [`LockOSThread`](https://golang.org/pkg/runtime/#LockOSThread) and [`UnlockOSThread`](https://golang.org/pkg/runtime/#UnlockOSThread) has changed. These functions control whether a goroutine is locked to a specific operating system thread, so that the goroutine only runs on that thread, and the thread only runs that goroutine. Previously, calling `LockOSThread` more than once in a row was equivalent to calling it once, and a single `UnlockOSThread` always unlocked the thread. Now, the calls nest: if `LockOSThread` is called multiple times, `UnlockOSThread` must be called the same number of times in order to unlock the thread. Existing code that was careful not to nest these calls will remain correct. Existing code that incorrectly assumed the calls nested will become correct. Most uses of these functions in public Go source code falls into the second category.
 
-In Go 1.10, there's a change. if `LockOSThread` is called multiple times, `UnlockOSThread` must be called the same number of times in order to unlock the thread. Detail the changes you can follow links:  
-[https://github.com/golang/go/issues/20458](https://github.com/golang/go/issues/20458)  
+In Go 1.10, there's a change. if `LockOSThread` is called multiple times, `UnlockOSThread` must be called the same number of times in order to unlock the thread. Detail the changes you can follow links:
+[https://github.com/golang/go/issues/20458](https://github.com/golang/go/issues/20458)
 [https://go-review.googlesource.com/c/go/+/45752](https://go-review.googlesource.com/c/go/+/45752)
 
-There is no longer a limit on the `[GOMAXPROCS](https://tip.golang.org/pkg/runtime/#GOMAXPROCS)` setting. 
+There is no longer a limit on the `[GOMAXPROCS](https://tip.golang.org/pkg/runtime/#GOMAXPROCS)` setting.
 
 ### Performance
 As always, the changes are so general and varied that precise statements about performance are difficult to make. Most programs should run a bit faster, due to speedups in the garbage collector, better generated code, and optimizations in the core library.
@@ -122,14 +122,14 @@ As always, the changes are so general and varied that precise statements about p
 ### Changes to Standard Library
 Here I'll list some changes to the Go standard library as of Go 1.10, full details on this can be found on the [official release doc](https://golang.org/doc/go1.10)
 
-#### Lib: net/url 
+#### Lib: net/url
 The `ResolveReference` method now preserves multiple leading slashes n the target URL. Previously, it rewrote multiple leading slashes to a single slash, which resulted in the `http.Client` following certain redirects incorrectly. Consider following code:
 ```go
 base, _ := url.Parse("http://host//path//to/page1")
 target, _ := url.Parse("page2")
 fmt.Println(base.ResolveReference(target))
 ```
-In Go 1.9, the output of the above is `http://host/path//to/page2` 
+In Go 1.9, the output of the above is `http://host/path//to/page2`
 In Go 1.10, the resolved URL is `http://host//path//to/page2`
 
 Note the doubled slashes around `path`. In Go 1.9 and earlier, the resolved URL was `http://host/path//to/page2`: the doubled slash before `path` was incorrectly rewritten to a single slash, while the doubled slash after `path` was correctly preserved. Go 1.10 preserves both doubled slashes, resolving to `http://host//path//to/page2` as required by [RFC 3986](https://tools.ietf.org/html/rfc3986#section-5.2).
