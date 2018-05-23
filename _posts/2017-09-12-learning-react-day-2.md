@@ -6,6 +6,7 @@ description: "Lifecycle methods in React"
 modified: 2017-09-12
 tags: [react, lifecycle methods, javascript]
 share: true
+comments: true
 category: [javascript, react]
 ---
 

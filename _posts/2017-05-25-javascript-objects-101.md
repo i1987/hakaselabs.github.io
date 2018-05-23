@@ -7,6 +7,7 @@ modified: 2017-05-25
 tags: [javascript, objects]
 share: true
 category: javascript
+comments: true
 ---
 In JavaScript, most things are objects, from core JavaScript features like strings and arrays to the browser APIs built on top of JavaScript. You can even create your own objects to encapsulate related functions and variables into efficient packages, and act as handy data containers.
 

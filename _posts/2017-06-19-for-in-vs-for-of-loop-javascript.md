@@ -6,6 +6,7 @@ description: "Differences between the for..in and for..of loops in javascript"
 modified: 2017-06-19
 tags: [javascript, loops]
 share: true
+comments: true
 category: javascript
 ---
 ![for-in-graphics](https://user-images.githubusercontent.com/9336187/27305938-97169192-553b-11e7-99cb-99396a9593fd.png "Hakase Labs")

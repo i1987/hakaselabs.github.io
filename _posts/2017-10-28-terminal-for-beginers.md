@@ -6,6 +6,7 @@ description: "A simple guide to getting started with the Terminal"
 modified: 2017-10-28
 tags: [unix, terminal]
 share: true
+comments: true
 category: workflow/tools
 ---
 Getting into Software Development seem overwhelming (actually it is) these days. One has to go through the hassle of getting familiar with different languages, to organizing codebases, to libraries, frameworks, the list goes on. Every Job description (at least the sane ones), requires additional skills to get the job. Example of such, Version Control (Git or Mecurial), tasks runners, build tools, package managers, etc.

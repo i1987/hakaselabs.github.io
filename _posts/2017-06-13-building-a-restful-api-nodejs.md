@@ -5,6 +5,7 @@ author: "@codehakase"
 tags: [node.js, api, rest, nodejs]
 description: "A simple guide to building RESTful apis with Node.js"
 modified: 2017-06-13
+comments: true
 share: true
 category: [javascript, nodejs]
 ---

@@ -6,6 +6,7 @@ description: "How I started with Go Programming"
 modified: 2017-09-02
 tags: [go, getting-started]
 share: true
+comments: true
 category: golang
 ---
 

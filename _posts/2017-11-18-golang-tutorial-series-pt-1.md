@@ -7,6 +7,7 @@ modified: 2017-11-18
 tags: [go]
 share: true
 category: go
+comments: true
 ---
 
 > “Go will be the server language of the future.” — Tobias Lütke, Shopify

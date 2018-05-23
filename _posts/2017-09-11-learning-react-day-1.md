@@ -6,6 +6,7 @@ description: "Getting started with React"
 modified: 2017-09-11
 tags: [react, javascript]
 share: true
+comments: true
 category: [react, javascript]
 ---
 

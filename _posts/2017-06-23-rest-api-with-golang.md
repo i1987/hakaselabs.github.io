@@ -7,6 +7,7 @@ modified: 2017-06-23
 tags: [go, getting-started, apis]
 share: true
 category: golang
+comments: true
 ---
 ![golang-api](https://user-images.githubusercontent.com/9336187/27503566-f8079884-5874-11e7-9dab-42b287a16d75.png)
 
